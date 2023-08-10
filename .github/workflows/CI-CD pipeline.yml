@@ -19,7 +19,7 @@ jobs:
           msbuild-version: 'latest'
 
       - name: Build application
-        working-directory: .\CI\CD Pipeline\MyDotNet
+        working-directory: ${{ github.workspace }}\Ikechukwu-CI-CD-pipeline\CI\CD Pipeline\MyDotNet
         run: msbuild MyDotNet.sln /p:Configuration=Release
 
   test:
@@ -36,7 +36,7 @@ jobs:
           msbuild-version: 'latest'
 
       - name: Build application
-        working-directory: .\CI\CD Pipeline\MyDotNet
+        working-directory: ${{ github.workspace }}\Ikechukwu-CI-CD-pipeline\CI\CD Pipeline\MyDotNet
         run: msbuild MyDotNet.sln /p:Configuration=Release
 
       - name: Run tests (replace with actual test commands)
@@ -56,7 +56,7 @@ jobs:
           msbuild-version: 'latest'
 
       - name: Build application
-        working-directory: .\CI\CD Pipeline\MyDotNet
+        working-directory: ${{ github.workspace }}\Ikechukwu-CI-CD-pipeline\CI\CD Pipeline\MyDotNet
         run: msbuild MyDotNet.sln /p:Configuration=Release
 
       - name: Deploy to staging (replace with actual deployment steps)
