@@ -13,13 +13,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v1
+      - name: Setup .NET SDK
+        uses: dotnet/setup-dotnet@v1
         with:
-          msbuild-version: 'latest'
+          dotnet-version: '6.0.x'  # Specify the desired .NET version
 
       - name: Build application
-        run: msbuild ./ComicWebsite/ComicWebsite.sln /p:Configuration=Release
+        run: dotnet build ./ComicWebsite/ComicWebsite.sln --configuration Release
 
   test:
     needs: build
@@ -29,13 +29,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v1
+      - name: Setup .NET SDK
+        uses: dotnet/setup-dotnet@v1
         with:
-          msbuild-version: 'latest'
+          dotnet-version: '6.0.x'  # Specify the desired .NET version
 
       - name: Build application
-        run: msbuild ./ComicWebsite/ComicWebsite.sln /p:Configuration=Release
+        run: dotnet build ./ComicWebsite/ComicWebsite.sln --configuration Release
 
       - name: Run tests (replace with actual test commands)
         run: echo "Running tests..."
@@ -48,13 +48,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v1
+      - name: Setup .NET SDK
+        uses: dotnet/setup-dotnet@v1
         with:
-          msbuild-version: 'latest'
+          dotnet-version: '6.0.x'  # Specify the desired .NET version
 
       - name: Build application
-        run: msbuild ./ComicWebsite/ComicWebsite.sln /p:Configuration=Release
+        run: dotnet build ./ComicWebsite/ComicWebsite.sln --configuration Release
 
       - name: Deploy to staging (replace with actual deployment steps)
         run: echo "Deploying to staging..."
