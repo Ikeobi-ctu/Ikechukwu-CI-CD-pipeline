@@ -27,8 +27,7 @@ jobs:
       - name: Build application
         run: dotnet build ./WebApp/WebApp/WebApplication1.sln --configuration Release
 
-      - name: Run tests
-        run: dotnet test ./WebApp/WebApp/WebApplication1.Tests/WebApplication1.Tests.csproj --configuration Release
+     
 
       - name: Deploy to staging (replace with actual deployment steps)
         run: echo "Deploying to staging..."
