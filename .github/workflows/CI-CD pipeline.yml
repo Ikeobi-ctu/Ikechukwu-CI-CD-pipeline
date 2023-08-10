@@ -1,119 +1,60 @@
 name: CI/CD Pipeline
 
- 
-
 on:
-
   push:
-
     branches:
-
       - main
 
- 
-
 jobs:
-
   build:
-
     runs-on: windows-latest
 
- 
-
     steps:
-
       - name: Checkout code
-
         uses: actions/checkout@v2
 
- 
-
       - name: Setup MSBuild
-
         uses: microsoft/setup-msbuild@v1
-
         with:
-
           msbuild-version: 'latest'
 
- 
-
       - name: Build application
-
-        run: msbuild ./MyDotNet/MyDotNet.sln /p:Configuration=Release
-
- 
+        run: msbuild "./CI/CD Pipeline/MyDotNet/MyDotNet.sln" /p:Configuration=Release
 
   test:
-
     needs: build
-
     runs-on: windows-latest
 
- 
-
     steps:
-
       - name: Checkout code
-
         uses: actions/checkout@v2
 
- 
-
       - name: Setup MSBuild
-
         uses: microsoft/setup-msbuild@v1
-
         with:
-
           msbuild-version: 'latest'
 
- 
-
       - name: Build application
-
-        run: msbuild ./MyDotNet/MyDotNet.sln /p:Configuration=Release
-
- 
+        run: msbuild "./CI/CD Pipeline/MyDotNet/MyDotNet.sln" /p:Configuration=Release
 
       - name: Run tests (replace with actual test commands)
-
         run: echo "Running tests..."
 
- 
-
   deploy:
-
     needs: test
-
     runs-on: windows-latest
 
- 
-
     steps:
-
       - name: Checkout code
-
         uses: actions/checkout@v2
 
- 
-
       - name: Setup MSBuild
-
         uses: microsoft/setup-msbuild@v1
-
         with:
-
           msbuild-version: 'latest'
 
- 
-
       - name: Build application
-
-        run: msbuild ./MyDotNet/MyDotNet.sln /p:Configuration=Release
-
- 
+        run: msbuild "./CI/CD Pipeline/MyDotNet/MyDotNet.sln" /p:Configuration=Release
 
       - name: Deploy to staging (replace with actual deployment steps)
-
         run: echo "Deploying to staging..."
