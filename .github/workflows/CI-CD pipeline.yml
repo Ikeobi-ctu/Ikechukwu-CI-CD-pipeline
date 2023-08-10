@@ -19,6 +19,5 @@ jobs:
           msbuild-version: 'latest'
 
       - name: Build application
-        run: |
-          cd "CI\CD Pipeline\MyDotNet"
-          msbuild MyDotNet.sln /p:Configuration=Release
+        working-directory: ./Ikechukwu-CI-CD-pipeline/CI/CD Pipeline/MyDotNet
+        run: msbuild MyDotNet.sln /p:Configuration=Release
