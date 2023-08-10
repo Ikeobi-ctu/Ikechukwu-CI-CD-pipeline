@@ -14,9 +14,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup .NET SDK
-        uses: dotnet/setup-dotnet@v1
+        uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '6.0.x'  # Specify the desired .NET version
+          dotnet-version: '6.x'  # Specify the desired .NET version
 
       - name: Build application
         run: dotnet build ./ComicWebsite/ComicWebsite.sln --configuration Release
@@ -30,9 +30,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup .NET SDK
-        uses: dotnet/setup-dotnet@v1
+        uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '6.0.x'  # Specify the desired .NET version
+          dotnet-version: '6.x'  # Specify the desired .NET version
 
       - name: Build application
         run: dotnet build ./ComicWebsite/ComicWebsite.sln --configuration Release
@@ -49,9 +49,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup .NET SDK
-        uses: dotnet/setup-dotnet@v1
+        uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '6.0.x'  # Specify the desired .NET version
+          dotnet-version: '6.x'  # Specify the desired .NET version
 
       - name: Build application
         run: dotnet build ./ComicWebsite/ComicWebsite.sln --configuration Release
