@@ -19,7 +19,7 @@ jobs:
           dotnet-version: '6.x'  # Specify the desired .NET version
 
       - name: Clean solution
-        run: dotnet clean ./ComicWebsite/ComicWebsite.sln --configuration Release
+        run: dotnet clean ./WebApp/WebApp/WebApplication1.sln --configuration Release
 
       - name: Build application
-        run: dotnet build ./ComicWebsite/ComicWebsite.sln --configuration Release
+        run: dotnet clean ./WebApp/WebApp/WebApplication1.sln --configuration Release
